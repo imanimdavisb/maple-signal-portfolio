@@ -15,11 +15,12 @@ export const healthyGreenLandscape: Project = {
     "Google Reviews",
     "Service-Area Map",
   ],
-  cardImage: { alt: "Healthy Green Landscape homepage concept preview" },
-  // PLACEHOLDER — the live demo URL is not finalized. Set this string to
-  // activate the "View Live Site" links across the site; leave it `null`
-  // to keep showing the "Live Demo Coming Soon" state.
-  liveUrl: null,
+  cardImage: {
+    alt: "Healthy Green Landscape homepage concept preview",
+    src: "/projects/healthy-green/healthy-green-card.jpg",
+  },
+  liveUrl: "https://healthy-green-landscape-demo.vercel.app/",
+  githubUrl: "https://github.com/imanimdavisb/healthy-green-landscape-demo",
   caseStudy: {
     overview:
       "Healthy Green Landscape is a concept redesign for a local lawn care and landscaping business, created to demonstrate how Maple & Signal approaches lead-generation websites for home service companies. The project reimagines a lawn care company's online presence around a single goal: turning visitors into free-estimate requests.",
@@ -57,15 +58,36 @@ export const healthyGreenLandscape: Project = {
       "Estimate request form handling",
     ],
     desktopScreenshots: [
-      { alt: "Healthy Green Landscape desktop homepage concept" },
-      { alt: "Healthy Green Landscape desktop services & pricing concept" },
-      { alt: "Healthy Green Landscape desktop reviews & gallery concept" },
-      { alt: "Healthy Green Landscape desktop service-area & FAQ concept" },
+      {
+        alt: "Healthy Green Landscape desktop homepage concept",
+        src: "/projects/healthy-green/healthy-green-desktop-home.jpg",
+      },
+      {
+        alt: "Healthy Green Landscape desktop services & pricing concept",
+        src: "/projects/healthy-green/healthy-green-desktop-services.jpg",
+      },
+      {
+        alt: "Healthy Green Landscape desktop before & after gallery concept",
+        src: "/projects/healthy-green/healthy-green-desktop-reviews-gallery.jpg",
+      },
+      {
+        alt: "Healthy Green Landscape desktop FAQ concept",
+        src: "/projects/healthy-green/healthy-green-desktop-area-faq.jpg",
+      },
     ],
     mobileScreenshots: [
-      { alt: "Healthy Green Landscape mobile homepage concept" },
-      { alt: "Healthy Green Landscape mobile estimate form concept" },
-      { alt: "Healthy Green Landscape mobile gallery concept" },
+      {
+        alt: "Healthy Green Landscape mobile homepage concept",
+        src: "/projects/healthy-green/healthy-green-mobile-home.jpg",
+      },
+      {
+        alt: "Healthy Green Landscape mobile estimate form concept",
+        src: "/projects/healthy-green/healthy-green-mobile-estimate-form.jpg",
+      },
+      {
+        alt: "Healthy Green Landscape mobile before & after gallery concept",
+        src: "/projects/healthy-green/healthy-green-mobile-gallery.jpg",
+      },
     ],
     // No beforeAfter set: this is a concept build, not a redesign of a
     // confirmed prior site, so no "before" state is shown or implied.
