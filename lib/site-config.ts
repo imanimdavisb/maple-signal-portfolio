@@ -1,5 +1,5 @@
 export const SITE_NAME = "Maple & Signal";
-export const SITE_TAGLINE = "Conversion-focused websites for local businesses.";
+export const SITE_TAGLINE = "Business websites, professional portfolios, and website audits.";
 
 /**
  * PLACEHOLDER — replace with the real production domain before launch.
@@ -13,10 +13,18 @@ export const SITE_URL = "https://www.maplesignal.example";
 export const CONTACT_EMAIL = "hello@maplesignal.example";
 
 export const NAV_LINKS = [
-  { label: "Work", href: "/work" },
+  { label: "Home", href: "/" },
   { label: "Services", href: "/services" },
-  { label: "About", href: "/about" },
+  { label: "Professional Portfolios", href: "/professional-portfolios" },
+  { label: "Website Audits", href: "/website-audits" },
+  { label: "Our Work", href: "/work" },
   { label: "Contact", href: "/contact" },
+] as const;
+
+/** Footer keeps every page reachable, including About (not in the top nav). */
+export const FOOTER_LINKS = [
+  ...NAV_LINKS.filter((link) => link.href !== "/"),
+  { label: "About", href: "/about" },
 ] as const;
 
 export const PRIMARY_CTA = { label: "Get a Free Website Audit", href: "/contact" };
