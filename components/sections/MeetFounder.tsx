@@ -2,10 +2,7 @@ import Image from "next/image";
 import { Button } from "@/components/ui/Button";
 import { CONTACT_PHONE } from "@/lib/site-config";
 
-/**
- * Who visitors will work with. Text in the highlighted marker is a placeholder
- * for Imani to replace with her own background.
- */
+/** Who visitors will work with, in Imani's own words. */
 export function MeetFounder() {
   return (
     <div className="grid items-center gap-12 lg:grid-cols-[2fr_3fr]">
@@ -25,14 +22,14 @@ export function MeetFounder() {
         <h2 className="font-display text-3xl text-ink sm:text-4xl">Hi, I&apos;m Imani.</h2>
         <div className="mt-6 space-y-4 text-lg text-ink-muted">
           <p>
-            I started Maple &amp; Signal to give small businesses and professionals a website
-            that actually works for them: clear, fast, and built around the next step you want
-            visitors to take.
+            I started Maple &amp; Signal because talented people and small-business owners
+            deserve to be seen. Many have the skills, passion and experience to succeed but
+            struggle to communicate their value online.
           </p>
           <p>
-            <mark className="placeholder-term" title="Placeholder: replace in components/sections/MeetFounder.tsx">
-              A sentence or two about your background and why you do this work.
-            </mark>
+            I wanted to make professional websites and portfolios more accessible, helping
+            people tell their stories, build confidence and connect with opportunities that can
+            improve their lives.
           </p>
           <p>
             When you reach out, you talk to me. I&apos;ll listen to what you need, tell you
