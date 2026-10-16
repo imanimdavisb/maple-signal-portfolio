@@ -21,9 +21,9 @@ export function ServicesSummary() {
   return (
     <>
       <div className="flex flex-wrap items-end justify-between gap-6">
-        <SectionHeading eyebrow="Services" title="Packages built around your business" />
-        <Button href="/services" variant="secondary">
-          View All Services
+        <SectionHeading eyebrow="Business Website Design" title="Packages built around your business" />
+        <Button href="/services#business-websites" variant="secondary">
+          View Business Packages
         </Button>
       </div>
       <div className="mt-12 grid gap-8 sm:grid-cols-3">

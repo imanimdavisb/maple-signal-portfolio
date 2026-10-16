@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Container } from "@/components/ui/Container";
-import { CONTACT_EMAIL, NAV_LINKS, SITE_NAME, SITE_TAGLINE, SOCIAL_LINKS } from "@/lib/site-config";
+import { CONTACT_EMAIL, CONTACT_PHONE, FOOTER_LINKS, SITE_NAME, SITE_TAGLINE, SOCIAL_LINKS } from "@/lib/site-config";
 
 export function Footer() {
   return (
@@ -14,7 +14,7 @@ export function Footer() {
           <div>
             <p className="text-sm font-medium uppercase tracking-wider text-ink-muted">Explore</p>
             <ul className="mt-4 space-y-3">
-              {NAV_LINKS.map((link) => (
+              {FOOTER_LINKS.map((link) => (
                 <li key={link.href}>
                   <Link href={link.href} className="text-sm text-ink-muted hover:text-ink">
                     {link.label}
@@ -29,6 +29,11 @@ export function Footer() {
               <li>
                 <a href={`mailto:${CONTACT_EMAIL}`} className="hover:text-ink">
                   {CONTACT_EMAIL}
+                </a>
+              </li>
+              <li>
+                <a href={CONTACT_PHONE.href} className="hover:text-ink">
+                  {CONTACT_PHONE.label}
                 </a>
               </li>
               {SOCIAL_LINKS.map((social) => (

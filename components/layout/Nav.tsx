@@ -2,11 +2,15 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { NAV_LINKS, PRIMARY_CTA, SITE_NAME } from "@/lib/site-config";
 import { Button } from "@/components/ui/Button";
 
 export function Nav() {
   const [open, setOpen] = useState(false);
+  const pathname = usePathname();
+  const isCurrent = (href: string) =>
+    href === "/" ? pathname === "/" : pathname === href || pathname.startsWith(`${href}/`);
 
   return (
     <header className="sticky top-0 z-50 border-b border-line bg-paper/90 backdrop-blur">
@@ -21,19 +25,22 @@ export function Nav() {
           {SITE_NAME}
         </Link>
 
-        <nav className="hidden items-center gap-8 md:flex">
+        <nav aria-label="Main" className="hidden items-center gap-5 lg:flex xl:gap-7">
           {NAV_LINKS.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className="text-sm font-medium text-ink-muted transition-colors hover:text-ink"
+              aria-current={isCurrent(link.href) ? "page" : undefined}
+              className="text-sm font-medium whitespace-nowrap text-ink-muted transition-colors hover:text-ink aria-[current=page]:text-ink"
             >
               {link.label}
             </Link>
           ))}
-          <Button href={PRIMARY_CTA.href} className="text-sm">
-            {PRIMARY_CTA.label}
-          </Button>
+          <span className="hidden xl:block">
+            <Button href={PRIMARY_CTA.href} className="text-sm whitespace-nowrap">
+              {PRIMARY_CTA.label}
+            </Button>
+          </span>
         </nav>
 
         <button
@@ -42,21 +49,22 @@ export function Nav() {
           aria-expanded={open}
           aria-controls="mobile-nav"
           aria-label="Toggle menu"
-          className="flex h-10 w-10 items-center justify-center rounded-full border border-line md:hidden"
+          className="flex h-10 w-10 items-center justify-center rounded-full border border-line lg:hidden"
         >
           {open ? <CloseIcon /> : <MenuIcon />}
         </button>
       </div>
 
       {open && (
-        <nav id="mobile-nav" className="border-t border-line bg-paper px-6 py-6 md:hidden">
+        <nav id="mobile-nav" aria-label="Main" className="border-t border-line bg-paper px-6 py-6 lg:hidden">
           <div className="flex flex-col gap-4">
             {NAV_LINKS.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
                 onClick={() => setOpen(false)}
-                className="text-base font-medium text-ink"
+                aria-current={isCurrent(link.href) ? "page" : undefined}
+                className="text-base font-medium text-ink aria-[current=page]:text-maple"
               >
                 {link.label}
               </Link>

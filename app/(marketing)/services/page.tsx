@@ -6,11 +6,13 @@ import { Button } from "@/components/ui/Button";
 import { FAQ } from "@/components/forms/FAQ";
 import { ProcessSteps } from "@/components/sections/ProcessSteps";
 import { CTASection } from "@/components/sections/CTASection";
+import { ServicePaths } from "@/components/sections/ServicePaths";
 import { PRIMARY_CTA } from "@/lib/site-config";
 
 export const metadata: Metadata = {
   title: "Services",
-  description: "Website design and lead-generation packages for local businesses, from Maple & Signal.",
+  description:
+    "Business website design, professional portfolio websites, and website audits from Maple & Signal.",
 };
 
 const tiers = [
@@ -51,6 +53,11 @@ const tiers = [
 
 const faqItems = [
   {
+    question: "Which service is right for me?",
+    answer:
+      "If you run a business and need more calls, quotes, or bookings, start with Business Website Design. If you want a personal site for your career, see Professional Portfolios. If you already have a website and aren't sure what's wrong with it, a free website check is the easiest first step.",
+  },
+  {
     question: "How much does a website cost?",
     answer:
       "It depends on the scope of the project — the number of pages, features like galleries or booking forms, and any integrations. Request a quote and we'll put together pricing based on what your business actually needs.",
@@ -78,11 +85,24 @@ export default function ServicesPage() {
       <PageHeader
         eyebrow="Services"
         title="Websites built to bring in customers"
-        description="Every package is built around one goal: turning visitors into leads for your business."
+        description="Business websites, professional portfolios, and website audits, each built around one goal: helping the right people take the next step with you."
       />
 
-      <Section>
-        <div className="grid gap-8 lg:grid-cols-3">
+      <Section tone="alt">
+        <ServicePaths
+          eyebrow="Our Services"
+          title="Find the right fit"
+          description="Three services, one standard: clear, fast, mobile-first websites designed to convert."
+        />
+      </Section>
+
+      <Section id="business-websites">
+        <SectionHeading
+          eyebrow="Business Website Design"
+          title="Websites for small businesses"
+          description="For small businesses, entrepreneurs, independent professionals, and seasonal service providers. Every package is built around one goal: turning visitors into leads for your business."
+        />
+        <div className="mt-12 grid gap-8 lg:grid-cols-3">
           {tiers.map((tier) => (
             <div key={tier.name} className="flex flex-col rounded-2xl border border-line bg-paper p-8">
               <h3 className="font-display text-2xl text-ink">{tier.name}</h3>
@@ -111,10 +131,37 @@ export default function ServicesPage() {
       </Section>
 
       <Section tone="alt">
-        <ProcessSteps />
+        <div className="grid gap-6 lg:grid-cols-2">
+          <div className="flex flex-col rounded-2xl border border-line bg-paper p-8">
+            <p className="text-sm font-medium uppercase tracking-wider text-maple">Professional Portfolios</p>
+            <h3 className="mt-3 font-display text-2xl text-ink">Portfolio websites from $199</h3>
+            <p className="mt-3 text-ink-muted">
+              Career Launch, Career Transition, and Professional Growth: three designs for students,
+              career changers, and established professionals, each with a working demo.
+            </p>
+            <Button href="/professional-portfolios" variant="secondary" className="mt-8 self-start">
+              Explore Portfolios
+            </Button>
+          </div>
+          <div className="flex flex-col rounded-2xl border border-line bg-paper p-8">
+            <p className="text-sm font-medium uppercase tracking-wider text-maple">Website Audits</p>
+            <h3 className="mt-3 font-display text-2xl text-ink">Start with a free website check</h3>
+            <p className="mt-3 text-ink-muted">
+              A review of design, mobile usability, SEO basics, speed, accessibility, and conversion.
+              Full audits are $149, with fixes and ongoing improvements available.
+            </p>
+            <Button href="/website-audits" variant="secondary" className="mt-8 self-start">
+              Explore Website Audits
+            </Button>
+          </div>
+        </div>
       </Section>
 
       <Section>
+        <ProcessSteps />
+      </Section>
+
+      <Section tone="alt">
         <SectionHeading eyebrow="FAQ" title="Common questions" />
         <div className="mt-10 max-w-2xl">
           <FAQ items={faqItems} />

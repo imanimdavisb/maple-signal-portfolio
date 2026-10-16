@@ -1,6 +1,8 @@
+import type { ReactNode } from "react";
+
 interface FAQItem {
   question: string;
-  answer: string;
+  answer: ReactNode;
 }
 
 export function FAQ({ items }: { items: FAQItem[] }) {
