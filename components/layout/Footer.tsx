@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Container } from "@/components/ui/Container";
-import { CONTACT_EMAIL, FOOTER_LINKS, SITE_NAME, SITE_TAGLINE, SOCIAL_LINKS } from "@/lib/site-config";
+import { CONTACT_EMAIL, CONTACT_PHONE, FOOTER_LINKS, SITE_NAME, SITE_TAGLINE, SOCIAL_LINKS } from "@/lib/site-config";
 
 export function Footer() {
   return (
@@ -29,6 +29,11 @@ export function Footer() {
               <li>
                 <a href={`mailto:${CONTACT_EMAIL}`} className="hover:text-ink">
                   {CONTACT_EMAIL}
+                </a>
+              </li>
+              <li>
+                <a href={CONTACT_PHONE.href} className="hover:text-ink">
+                  {CONTACT_PHONE.label}
                 </a>
               </li>
               {SOCIAL_LINKS.map((social) => (

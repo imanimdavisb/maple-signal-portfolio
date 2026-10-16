@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/Button";
 import { FAQ } from "@/components/forms/FAQ";
 import { CTASection } from "@/components/sections/CTASection";
 import { DemoShowcase } from "@/components/portfolios/DemoShowcase";
+import { MeetFounder } from "@/components/sections/MeetFounder";
 import {
   PortfolioInquiryForm,
   PortfolioInquiryFormWithParams,
@@ -170,6 +171,10 @@ export default function ProfessionalPortfoliosPage() {
       </Section>
 
       <Section>
+        <MeetFounder />
+      </Section>
+
+      <Section tone="alt">
         <SectionHeading eyebrow="FAQ" title="Questions about portfolio websites" />
         <div className="mt-10 max-w-2xl">
           <FAQ
@@ -178,7 +183,7 @@ export default function ProfessionalPortfoliosPage() {
         </div>
       </Section>
 
-      <Section tone="alt" id="inquiry">
+      <Section id="inquiry">
         <div className="grid gap-12 lg:grid-cols-[1fr_2fr]">
           <SectionHeading
             eyebrow="Start Your Portfolio"

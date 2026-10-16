@@ -7,6 +7,7 @@ import { ServicesSummary } from "@/components/sections/ServicesSummary";
 import { ProcessSteps } from "@/components/sections/ProcessSteps";
 import { CTASection } from "@/components/sections/CTASection";
 import { ServicePaths } from "@/components/sections/ServicePaths";
+import { MeetFounder } from "@/components/sections/MeetFounder";
 import { DemoShowcase } from "@/components/portfolios/DemoShowcase";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Button } from "@/components/ui/Button";
@@ -57,9 +58,12 @@ export default function HomePage() {
         <WhyUs />
       </Section>
       <Section>
-        <ServicesSummary />
+        <MeetFounder />
       </Section>
       <Section tone="alt">
+        <ServicesSummary />
+      </Section>
+      <Section>
         <ProcessSteps />
       </Section>
       <CTASection

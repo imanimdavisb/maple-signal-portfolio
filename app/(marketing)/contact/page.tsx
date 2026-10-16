@@ -3,7 +3,7 @@ import { Suspense } from "react";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { Section } from "@/components/ui/Section";
 import { ContactForm, ContactFormWithParams } from "@/components/forms/ContactForm";
-import { CONTACT_EMAIL } from "@/lib/site-config";
+import { CONTACT_EMAIL, CONTACT_PHONE } from "@/lib/site-config";
 import { isDeliveryConfigured } from "@/lib/forms/deliver";
 
 export const metadata: Metadata = {
@@ -30,6 +30,12 @@ export default function ContactPage() {
               <p className="font-medium text-ink">Prefer email?</p>
               <a href={`mailto:${CONTACT_EMAIL}`} className="mt-1 block text-maple">
                 {CONTACT_EMAIL}
+              </a>
+            </div>
+            <div>
+              <p className="font-medium text-ink">Prefer to talk?</p>
+              <a href={CONTACT_PHONE.href} className="mt-1 block text-maple">
+                {CONTACT_PHONE.label}
               </a>
             </div>
             <div>

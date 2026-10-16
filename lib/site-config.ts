@@ -12,6 +12,9 @@ export const SITE_URL = "https://www.maplesignal.example";
  */
 export const CONTACT_EMAIL = "hello@maplesignal.example";
 
+/** Phone for inquiries. `href` is the dialable form used in tel: links. */
+export const CONTACT_PHONE = { label: "(708) 655-8698", href: "tel:+17086558698" };
+
 export const NAV_LINKS = [
   { label: "Home", href: "/" },
   { label: "Services", href: "/services" },

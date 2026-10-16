@@ -3,6 +3,7 @@ import { PageHeader } from "@/components/ui/PageHeader";
 import { Section } from "@/components/ui/Section";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { CTASection } from "@/components/sections/CTASection";
+import { MeetFounder } from "@/components/sections/MeetFounder";
 import { PRIMARY_CTA } from "@/lib/site-config";
 
 export const metadata: Metadata = {
@@ -41,6 +42,10 @@ export default function AboutPage() {
       </Section>
 
       <Section tone="alt">
+        <MeetFounder />
+      </Section>
+
+      <Section>
         <SectionHeading
           eyebrow="Who We Work With"
           title="Local businesses who depend on their website to bring in work"
